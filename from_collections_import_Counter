@@ -1,0 +1,20 @@
+from collections import Counter
+shoes = int(input())
+sizes = dict(Counter(list(map(int,input().split()))))
+customers = int(input())
+
+total =0
+
+for x in range(customers):
+    a,b = (map(int,input().split()))
+    size_price = {a:b}
+    for d,e in sizes.items():
+        for i,j in size_price.items():
+            if d==i and e!=0:
+                total+=j 
+                sizes[d]-=1 
+            
+print(total)
+
+
+
